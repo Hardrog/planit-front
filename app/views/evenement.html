@@ -1,0 +1,39 @@
+<div id="contactList_view" ng-controller="EvenementCtrl">
+ <div >
+        <table class="table">
+            <tr class="animate-repeat" ng-repeat="evenment in evenementList">
+                <td>{{evenment.date}}</td>
+            </tr>
+        </table>
+    </div>
+    <div style="float:right">
+        <button class="btn btn-primary" type="button" id="newContact" data-toggle="modal" data-target="#contactModal">
+            Nouveau <span class="badge">+</span>
+        </button>
+    </div>
+
+    <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Nouveau evenement</h4>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        Date : <input class="form-control datepicker" type ="text" ng-model="evenement.date"  placeholder="Nom"><br/>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary"  ng-click="addNewEvenement(user)">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+     
+    
+    <script>
+      $(".datepicker").datepicker();
+    </script>
