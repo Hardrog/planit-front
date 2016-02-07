@@ -1,0 +1,18 @@
+<div id="contactList_view" ng-controller="NewEvenementCtrl">
+    <div >
+         <form>
+                        Nom : <input class="form-control" type ="text"   placeholder="Nom"><br/>
+                        Date : <input class="form-control datepicker" type ="text"   placeholder="date"><br/>
+                    </form>
+    </div>
+    <div style="float:right">
+        <button class="btn btn-primary" type="button" id="newContact" data-toggle="modal" data-target="#contactModal">
+            Nouveau <span class="badge">+</span>
+        </button>
+    </div>
+
+    
+</div>  
+<script>
+      $(".datepicker").pickadate();
+    </script>

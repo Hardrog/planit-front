@@ -108,6 +108,15 @@ angular.module('planIt', [
           }],
         }
       })
+      .when('/newEvenement', {
+        templateUrl: 'views/newEvenement.html',
+        controller: 'NewEvenementCtrl',
+        resolve: {
+          authenticated: ['djangoAuth', function(djangoAuth){
+            return djangoAuth.authenticationStatus(true);
+          }],
+        }
+      })
       .otherwise({
         redirectTo: '/'
       });
