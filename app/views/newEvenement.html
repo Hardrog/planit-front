@@ -1,18 +1,25 @@
 <div id="contactList_view" ng-controller="NewEvenementCtrl">
     <div >
-         <form>
-                        Nom : <input class="form-control" type ="text"   placeholder="Nom"><br/>
-                        Date : <input class="form-control datepicker" type ="text"   placeholder="date"><br/>
-                    </form>
+        <form>
+            Nom : <input class="form-control" type ="text"   placeholder="Nom"><br/>
+            Debut : <input class="form-control datepicker" type ="text"   placeholder="Date"><br/>
+            Heure : <input class="form-control timepicker" type ="text"   placeholder="Heure"><br/>
+        </form>
     </div>
     <div style="float:right">
         <button class="btn btn-primary" type="button" id="newContact" data-toggle="modal" data-target="#contactModal">
-            Nouveau <span class="badge">+</span>
+            Enregistrer <span class="badge glyphicon glyphicon-ok"> </span>
         </button>
     </div>
 
-    
+
 </div>  
 <script>
-      $(".datepicker").pickadate();
-    </script>
+            // Extend the default picker options for all instances.
+            $.extend($.fn.pickatime.defaults, {
+               format: 'HH:i',
+               interval: 10,
+            });
+            $(".datepicker").pickadate();
+            $(".timepicker").pickatime();
+</script>
