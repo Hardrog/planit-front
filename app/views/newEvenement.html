@@ -1,13 +1,13 @@
-<div id="contactList_view" ng-controller="NewEvenementCtrl">
+<div ng-controller="NewEvenementCtrl">
     <div >
         <form>
             Nom : <input class="form-control" type ="text"   placeholder="Nom"><br/>
-            Debut : <input class="form-control datepicker" type ="text"   placeholder="Date"><br/>
-            Heure : <input class="form-control timepicker" type ="text"   placeholder="Heure"><br/>
+            Debut : <input class="form-control datepicker" type ="text" ng-model="evenement.date"   id="dateNewEvenement" placeholder="Date"><br/>
+            Heure : <input class="form-control timepicker" type ="text" ng-model="evenement.time"  placeholder="Heure"><br/>
         </form>
     </div>
     <div style="float:right">
-        <button class="btn btn-primary" type="button" id="newContact" data-toggle="modal" data-target="#contactModal">
+        <button class="btn btn-primary" type="button" id="saveNewEvenement" ng-click="addNewEvenement(evenement)">
             Enregistrer <span class="badge glyphicon glyphicon-ok"> </span>
         </button>
     </div>
@@ -20,6 +20,9 @@
                format: 'HH:i',
                interval: 10,
             });
-            $(".datepicker").pickadate();
+            $(".datepicker").pickadate({
+                formatSubmit: 'yyyy/mm/dd',
+                hiddenName: true
+            });
             $(".timepicker").pickatime();
 </script>

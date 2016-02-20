@@ -11,7 +11,7 @@ angular.module('planIt')
         .controller('EvenementCtrl', function ($scope, Evenement) {
 
             Evenement.fetchAll().then(function (data) {
-                $scope.contactList = data.results;
+                $scope.evenementList = data.results;
             });
 
             

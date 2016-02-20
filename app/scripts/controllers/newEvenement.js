@@ -10,6 +10,9 @@
 angular.module('planIt')
         .controller('NewEvenementCtrl', function ($scope, Evenement) {
 
-           
+             $scope.addNewEvenement = function (evenement) {
+
+                Evenement.addNew(evenement);
+            };
 
         });

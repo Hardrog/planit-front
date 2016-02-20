@@ -67,7 +67,20 @@ angular.module('planIt')
         'fetchAll': function(){
             return this.request({
                 'method': "GET",
-                'url': "/evenement/"
+                'url': "/evenements/"
+            }); 
+        },
+        'addNew': function(event){
+           var $input = $('.datepicker').pickadate();
+           var picker = $input.pickadate('picker');
+           
+            var data = {
+                'date':picker.get('view','yyyy-mm-dd')+" "+event.time
+            }
+            return this.request({
+                'method': "POST",
+                'url': "/evenements/",
+                'data':data,
             }); 
         },
     }
